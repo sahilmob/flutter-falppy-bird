@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 
 import 'package:flappy_bird/game.dart';
@@ -13,6 +14,7 @@ class Ground extends SpriteComponent with HasGameRef<FlappyBirdGame> {
     position = Vector2(0, gameRef.size.y - groundHeight);
 
     sprite = await Sprite.load("ground.png");
+    add(RectangleHitbox());
   }
 
   @override
